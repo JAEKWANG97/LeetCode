@@ -7,8 +7,8 @@ result = re.sub(r"[^a-zA-Z]", " ", paragraph)
 result_dict = dict()
 
 for x in list(result.split(' ')):
-    # if x in banned:
-    #         continue
+    if x in banned:
+            continue
     if len(x) > 0:
         if x.lower() not in result_dict:
             result_dict[x.lower()] = 0

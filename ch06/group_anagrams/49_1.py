@@ -11,7 +11,6 @@ def encode(s):
 encoded_strs = {}
 for s in strs:
     encoded = encode(s)
-    print(encoded)
     if encoded not in encoded_strs:
         encoded_strs[encoded] = [s]
     else:

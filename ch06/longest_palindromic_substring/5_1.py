@@ -23,6 +23,8 @@ def dp_table(s : str):
             max_length = 2
             max_strs = ''.join(s[i:i+2])
             
+            
+    
     
     for length in range(3,len(s)+1):
         for i in range(len(s) - length + 1):

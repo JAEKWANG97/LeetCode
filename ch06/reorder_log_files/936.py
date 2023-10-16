@@ -21,27 +21,6 @@ for str in log:
     else:
         str_log.append(str)
 
-
-
-def len_alpha_str(s : str) -> int :
-    s = list(s)
-    count = 0
-    for x in s:
-        if x.isdecimal():
-           pass
-        else:
-            count += 1
-    return count
-        
-def compare_alpha(s: str) -> int:
-    s = list(s)
-    value = 0
-    for x in s:
-        if x.isdecimal():
-           pass
-        else:
-            value += ord
-
 str_log.sort(key=lambda x : (x.split()[1:], x.split()[0] ))
 
 str_log.extend(dig_log)
