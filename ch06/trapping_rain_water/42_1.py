@@ -23,7 +23,6 @@ class Solution:
         
         max_left = height[left]
         max_right = height[right]
-        print(standard)
         while left <= standard:
             max_left = max(max_left , height[left])
             volume += (max_left - height[left])

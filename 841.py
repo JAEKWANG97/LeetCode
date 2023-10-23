@@ -9,8 +9,8 @@ visited[0]  = True
 seen.append(0)
 while seen:
     neighborhood= seen.popleft()
-    if rooms[num]:
-        for x in rooms[num]:
+    if rooms[neighborhood]:
+        for x in rooms[neighborhood]:
             if visited[x] == False and x not in seen:
                 seen.append(x)
                 visited[x] = True
