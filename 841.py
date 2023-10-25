@@ -14,4 +14,5 @@ while seen:
             if visited[x] == False and x not in seen:
                 seen.append(x)
                 visited[x] = True
+
 print(all(visited))
