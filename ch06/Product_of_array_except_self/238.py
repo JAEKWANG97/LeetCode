@@ -1,6 +1,6 @@
 # 배열을 입력받아 output[i]가 자신을 제외한 나머지 모든 요소의 곱셈 결과가 되도록 출력하라
 
-arr = [1,2,3,4]
+nums = [1,2,3,4]
 output = [24,12,8,6]
 
 # 나눗셈을 하지 않고 O(n)에 풀이하라
@@ -15,23 +15,18 @@ output = [24,12,8,6]
 # 이 문제에는 중요한 제약사항이 있다. 
 # 당장 머릿속에 떠오르는 풀이법은 미리 전체 곱셈값을 구해놓고 각 항목별로 자기 자신을 나눠서 풀이하는 방법은 안된다는 것이다.
 # 그렇다면 풀이 방법은 한 가지 뿐이다. 자기 자신을 제외하고 왼쪽의 곱셈 결과와 오른쪽의 곱셈 결과를 곱해야한다.
-
-in_order_mul_arr = []
-reversed_mul_arr = []
-temp = 1
-for i in range(len(arr)):
-    in_order_mul_arr.append(temp)
-    temp *= arr[i]
-
-temp = 1
-for i in range(len(arr)-1 , 0-1, -1):
-    temp = in_order_mul_arr[i] * arr[i]
-    reversed_mul_arr.append(temp)
-    print(in_order_mul_arr[i])
+def productExceptSelf(nums) -> [] : 
+    out = []
+    p = 1
+    # 왼쪽 곱셈
+    for i in range(0,len(nums)):
+        out.append(p) # 1 ~ 곱
+        p = p*nums[i] # index 1 부터 계속 곱
+    p = 1
     
-answer = []
-for i in range(len(arr)):
-    temp = in_order_mul_arr[i] * reversed_mul_arr[i]
-    answer.append(temp)
-    
-print(answer)
+    # 왼쪽 곱셈 결과에 오른쪽 값을 차례대로 곱셈
+    for i in range(len(nums) - 1, 0 - 1 , -1):
+        out[i] = out[i] * p
+        p = p * nums[i]
+        
+    return out

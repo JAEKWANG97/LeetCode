@@ -15,9 +15,6 @@ for i in range(len(nums) - 1, 0 - 1 , -1):
     reversed_multi.append(temp)
     temp *= nums[i]
     
-print(in_ordered_multi)
-print(reversed_multi)
-
 reversed_multi.reverse()
 
 answer = []
