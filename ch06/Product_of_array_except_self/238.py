@@ -16,19 +16,22 @@ output = [24,12,8,6]
 # 당장 머릿속에 떠오르는 풀이법은 미리 전체 곱셈값을 구해놓고 각 항목별로 자기 자신을 나눠서 풀이하는 방법은 안된다는 것이다.
 # 그렇다면 풀이 방법은 한 가지 뿐이다. 자기 자신을 제외하고 왼쪽의 곱셈 결과와 오른쪽의 곱셈 결과를 곱해야한다.
 
-
-answer = []
-
+in_order_mul_arr = []
+reversed_mul_arr = []
+temp = 1
 for i in range(len(arr)):
-    left = 0
-    right = len(arr) -1
-    multi = 1
-    while left < i:
-        multi *= arr[left]
-        left += 1
-    while right > i:
-        multi *= arr[right]
-        right -= 1
-    answer.append(multi)
+    in_order_mul_arr.append(temp)
+    temp *= arr[i]
 
+temp = 1
+for i in range(len(arr)-1 , 0-1, -1):
+    temp = in_order_mul_arr[i] * arr[i]
+    reversed_mul_arr.append(temp)
+    print(in_order_mul_arr[i])
+    
+answer = []
+for i in range(len(arr)):
+    temp = in_order_mul_arr[i] * reversed_mul_arr[i]
+    answer.append(temp)
+    
 print(answer)
